@@ -31,16 +31,16 @@ This is the configuration file to apache2. This file must be downloaded at the /
 
 ```
 <VirtualHost *:80>  
-			# ServerName glpi
-			ServerAlias __IP__
-			DocumentRoot /var/www/html
-			Alias "/glpi" "/var/www/html/glpi/public"  
-			<Directory /var/www/html/glpi>
-				Require all granted  
-				RewriteEngine On  
-				RewriteCond %{REQUEST_FILENAME} !-f  
-				RewriteRule ^(.*)$ index.php [QSA,L]  
-			</Directory>  
-		</VirtualHost>
+	# ServerName glpi
+	ServerAlias __IP__
+	DocumentRoot /var/www/html
+	Alias "/glpi" "/var/www/html/glpi/public"  
+	<Directory /var/www/html/glpi>
+		Require all granted  
+		RewriteEngine On  
+		RewriteCond %{REQUEST_FILENAME} !-f  
+		RewriteRule ^(.*)$ index.php [QSA,L]  
+	</Directory>  
+</VirtualHost>
 ```
 If an error occure, try to enable the rewrite module: `a2enmod rewrite`
